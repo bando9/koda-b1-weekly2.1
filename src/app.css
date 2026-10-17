@@ -1,2 +1,15 @@
 @import "tailwindcss";
 
+@layer components {
+  .section-label {
+    @apply text-[#FF5F22] uppercase font-semibold text-xs;
+  }
+
+  .section-title {
+    @apply mt-3 font-bold text-3xl text-[#101828];
+  }
+
+  .section-description {
+    @apply font-normal text-[#6A7282] mt-4;
+  }
+}
