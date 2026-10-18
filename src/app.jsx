@@ -1,9 +1,11 @@
 import profile from "./assets/profile.png";
 import Badge from "./features/home/components/badge";
 import CardHome from "./features/home/components/card-home";
-import { IconArrowNarrowRight } from "@tabler/icons-react";
+import { IconArrowNarrowRight, IconArrowUp } from "@tabler/icons-react";
 import CardHomeWork from "./features/home/components/card-home-work";
 import SectionHeading from "./features/home/components/section-heading";
+import CardHomeTestimonial from "./features/home/components/card-home-testimonial";
+import BadgeFooter from "./features/home/components/badge-footer";
 
 function App() {
   return (
@@ -225,119 +227,100 @@ function App() {
               description="Feedback from people I've had the pleasure of working with."
             />
 
-            <div className="mt-15">
-              <div className="bg-[#F9FAFB] p-7 rounded-xl">
-                <div>
-                  <p className="text-[#4A5565] font-normal text-sm">
-                    “Alex delivered our e-commerce platform ahead of schedule.
-                    The code quality was outstanding and the UI exceeded our
-                    expectations.”
-                  </p>
-                </div>
-                <div className="flex justify-start items-center pt-6 gap-4">
-                  <img
-                    src="/images/testimonial1.png"
-                    alt="Sarah profile"
-                    className="w-10 h-10"
-                  />
-                  <div>
-                    <p className="font-semibold text-sm">Sarah Johnson</p>
-                    <p className="font-normal text-xs">CEO, BrightShop Inc.</p>
-                  </div>
-                </div>
-              </div>
+            <div className="mt-15 space-y-7">
+              <CardHomeTestimonial
+                name="Sarah Johnson"
+                background="CEO, BrightShop Inc."
+                src="testimonial1"
+                description="“Alex delivered our e-commerce platform ahead of schedule. The code quality was outstanding and the UI exceeded our expectations.”"
+              />
 
-              <div class="card">
-                <div>
-                  <p>
-                    “Working with Alex was a pleasure. They understood our
+              <CardHomeTestimonial
+                name="Michael Chen"
+                description="“Working with Alex was a pleasure. They understood our
                     requirements immediately and brought creative solutions to
-                    complex problems.”
-                  </p>
-                </div>
-                <div>
-                  <img src="#" alt="gb1" />
-                  <div>
-                    <p>Michael Chen</p>
-                    <p>CTO, Velocity Labs</p>
-                  </div>
-                </div>
-              </div>
+                    complex problems.”"
+                src="testimonial2"
+                background="CTO, Velocity Labs"
+              />
 
-              <div class="card">
-                <div>
-                  <p>
-                    “Alex transformed our outdated website into a modern,
-                    responsive platform. Traffic increased 40% within the first
-                    month of launch.”
-                  </p>
-                </div>
-                <div>
-                  <img src="#" alt="gb1" />
-                  <div>
-                    <p>Emily Rodriguez</p>
-                    <p>Marketing Director, Apex Digital</p>
-                  </div>
-                </div>
-              </div>
+              <CardHomeTestimonial
+                name="Emily Rodriguez"
+                background="Marketing Director, Apex Digital"
+                src="testimonial3"
+                description="“Alex transformed our outdated website into a modern, responsive platform. Traffic increased 40% within the first month of launch.”"
+              />
             </div>
+          </div>
+        </section>
+
+        <section className="py-20 text-center bg-[#111111]">
+          <div className="mx-6">
+            <h2 className="font-bold text-3xl text-white">
+              Let's Work Together
+            </h2>
+            <p className="mt-4 text-[#FFD6A8]">
+              I'm currently available for freelance projects and full-time
+              opportunities. Let's build something great.
+            </p>
+            <button
+              href="/contact"
+              className="bg-[#FF5F22] rounded-lg py-4 px-8 mt-8 font-bold text-lg"
+            >
+              Get In Touch
+            </button>
           </div>
         </section>
       </main>
 
-      <footer>
-        <div>
-          <h2>Let's Work Together</h2>
-          <p>
-            I'm currently available for freelance projects and full-time
-            opportunities. Let's build something great.
-          </p>
-          <button>Get In Touch</button>
-        </div>
-
-        <div>
-          <div class="left">
-            <h2>Alex Carter</h2>
-            <p>
-              Full-stack software developer based in San Francisco, CA. Building
-              thoughtful web experiences one commit at a time.
-            </p>
-            <div>
-              <div>
-                <p>GitHub</p>
-              </div>
-              <div>
-                <p>Linkedin</p>
-              </div>
-              <div>
-                <p>Twitter</p>
+      <footer className="bg-[#101828]">
+        <div className="mx-6 flex flex-col items-center justify-center">
+          <div className="pt-14 pb-10 space-y-10">
+            <div class="left">
+              <h2 className="text-white font-bold text-xl">Alex Carter</h2>
+              <p className="mt-3 font-normal text-sm text-[#99A1AF]">
+                Full-stack software developer based in San Francisco, CA.
+                Building thoughtful web experiences one commit at a time.
+              </p>
+              <div className="mt-6 flex gap-3">
+                <BadgeFooter tech="Github" />
+                <BadgeFooter tech="Linkedin" />
+                <BadgeFooter tech="Twitter" />
               </div>
             </div>
-          </div>
-          <div class="mid">
-            <h2>Quick Links</h2>
-            <ul>
-              <li>Home</li>
-              <li>About</li>
-              <li>Projects</li>
-              <li>Experience</li>
-              <li>Contact</li>
-            </ul>
+            <div class="mid">
+              <h2 className="text-white font-semibold text-sm uppercase">
+                Quick Links
+              </h2>
+              <ul className="mt-6 text-[#99A1AF] space-y-3.5 font-normal text-sm">
+                <li>Home</li>
+                <li>About</li>
+                <li>Projects</li>
+                <li>Experience</li>
+                <li>Contact</li>
+              </ul>
+            </div>
+
+            <div class="right">
+              <h2 className="uppercase font-semibold text-sm text-white">
+                Contact
+              </h2>
+              <ul className="mt-6 text-[#99A1AF] space-y-3.5 font-normal text-sm">
+                <li>alex.carter@email.com</li>
+                <li>+1 (415) 555-0192</li>
+                <li>San Francisco, CA 94105</li>
+              </ul>
+            </div>
           </div>
 
-          <div class="right">
-            <h2>Contact</h2>
-            <ul>
-              <li>alex.carter@email.com</li>
-              <li>+1 (415) 555-0192</li>
-              <li>San Francisco, CA 94105</li>
-            </ul>
+          <div className="mx-6 flex flex-col justify-center border-t border-[#1E2939]">
+            <p className="text-[#6A7282] font-normal text-sm text-center mt-6">
+              @2026 Alex Carter. All rights reserved.
+            </p>
+            <button className="text-[#99A1AF] flex mt-3 justify-center gap-2 pb-14">
+              Back to Top <IconArrowUp stroke={2} />
+            </button>
           </div>
-        </div>
-
-        <div>
-          <p>@2026 Alex Carter. All rights reserved.</p>
-          <button>Back to Top</button>
         </div>
       </footer>
     </div>
