@@ -182,10 +182,7 @@ export function InterestTags() {
   return (
     <div className="flex flex-wrap justify-center gap-3 max-w-md ">
       {interests.map((interest, index) => (
-        <div
-          key={index}
-          className="bg-[#F8FAFC] text-[#334155] rounded-full text-sm font-medium text-center shadow-sm border border-slate-100/60"
-        >
+        <div key={index} className="pill bg-[#F9FAFB] text-[#364153]">
           {interest}
         </div>
       ))}

@@ -23,7 +23,7 @@ export default function Experience() {
           <SectionHeading
             align="start"
             label="work history"
-            title="Proffesional Experience"
+            title="Professional Experience"
           />
 
           <div className="mt-10">

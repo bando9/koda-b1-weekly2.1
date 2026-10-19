@@ -7,9 +7,11 @@ import InputCheckbox from "../../features/contact/input-checkbox";
 import InputRadio from "../../features/contact/input-radio";
 import SocialMedia from "../../features/contact/social-media";
 import InformationTag from "../../features/contact/information-tag";
+import { useEffect, useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 
 const initialForm = {
-  fullname: "",
+  name: "",
   email: "",
   phone: "",
   subject: "",
@@ -25,13 +27,35 @@ export default function Contact() {
     handleSubmit,
     reset,
     // formState: { errors },
-  } = useForm(initialForm);
+  } = useForm({
+    defaultValues: initialForm,
+  });
+
+  const [messages, setMessages] = useState(() => {
+    try {
+      const saved = localStorage.getItem("touchMessages");
+      const data = saved ? JSON.parse(saved) : [];
+
+      return Array.isArray(data) ? data : [];
+    } catch {
+      return [];
+    }
+  });
 
   function onSubmit(data) {
-    console.log(data);
+    const createMessage = {
+      id: uuidv4(),
+      ...data,
+    };
+
+    setMessages((prevMessages) => [createMessage, ...prevMessages]);
 
     reset();
   }
+
+  useEffect(() => {
+    localStorage.setItem("touchMessages", JSON.stringify(messages));
+  }, [messages]);
 
   const handleReset = () => reset();
 

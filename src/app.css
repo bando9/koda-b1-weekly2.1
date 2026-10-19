@@ -12,4 +12,16 @@
   .section-description {
     @apply font-normal text-[#6A7282] mt-4;
   }
+
+  .badge {
+    @apply bg-[#F9FAFB] py-1 px-2.5 text-[#4A5565] rounded-full font-medium text-xs;
+  }
+
+  .button {
+    @apply rounded-lg py-2.5 px-11  font-medium text-sm;
+  }
+
+  .pill {
+    @apply rounded-full border border-[#E5E7EB] py-2.5 px-5 font-medium  text-[#4A5565] text-sm;
+  }
 }

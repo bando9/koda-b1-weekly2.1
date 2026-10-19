@@ -26,19 +26,19 @@ export default function Footer() {
             </h2>
             <ul className="mt-6 text-[#99A1AF] space-y-3.5 font-normal text-sm">
               <li>
-                <Link to="/"> Home</Link>
+                <Link to="/">Home</Link>
               </li>
               <li>
-                <Link to="/about"> About</Link>
+                <Link to="/about">About</Link>
               </li>
               <li>
-                <Link to="/projects">Projects</Link>
+                <Link to="/project">Projects</Link>
               </li>
               <li>
-                <Link to="experience">Experience</Link>
+                <Link to="/experience">Experience</Link>
               </li>
               <li>
-                <Link to="contact">Contact</Link>
+                <Link to="/contact">Contact</Link>
               </li>
             </ul>
           </div>

@@ -6,7 +6,6 @@ import CardHomeTestimonial from "../../features/home/components/card-home-testim
 import Footer from "../../components/footer";
 import NavBar from "../../components/nav-bar";
 
-import { IconArrowNarrowRight } from "@tabler/icons-react";
 import { Link } from "react-router";
 
 export default function Home() {
@@ -101,10 +100,11 @@ export default function Home() {
                   deepening my cloud architecture and DevOps skills."
               />
 
-              <button className="mt-10 flex items-center mx-auto text-sm font-semibold">
-                Learn more about me
-                <IconArrowNarrowRight stroke={2} />
-              </button>
+              <div className="flex justify-center items-center">
+                <Link to="/about" className="mt-10 text-sm font-semibold">
+                  Learn more about me ➜
+                </Link>
+              </div>
             </div>
           </div>
         </section>
