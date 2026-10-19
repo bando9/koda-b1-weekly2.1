@@ -17,7 +17,7 @@ const initialForm = {
   subject: "",
   country: "",
   message: "",
-  method: "email",
+  method: "email-rb",
   tech: "",
 };
 
@@ -73,40 +73,42 @@ export default function Contact() {
         <section className="px-6 py-16">
           <h2 className="font-bold text-[#101828] text-xl">Send a Message</h2>
           <form className="mt-7 space-y-5" onSubmit={handleSubmit(onSubmit)}>
-            <Input
-              required={true}
-              ph="Jordan Smith"
-              title="Full Name"
-              register={register}
-              nameFor="name"
-              type="text"
-            />
+            <div className="md:grid md:grid-cols-2 md:space-x-4">
+              <Input
+                required={true}
+                ph="Jordan Smith"
+                title="Full Name"
+                register={register}
+                nameFor="name"
+                type="text"
+              />
 
-            <Input
-              required={true}
-              ph="you@example.com"
-              title="Email Address"
-              register={register}
-              nameFor="email"
-              type="email"
-            />
+              <Input
+                required={true}
+                ph="you@example.com"
+                title="Email Address"
+                register={register}
+                nameFor="email"
+                type="email"
+              />
 
-            <Input
-              ph="+1 (415) 555-0100"
-              title="Phone Number"
-              register={register}
-              nameFor="phone"
-              type="tel"
-            />
+              <Input
+                ph="+1 (415) 555-0100"
+                title="Phone Number"
+                register={register}
+                nameFor="phone"
+                type="tel"
+              />
 
-            <Input
-              required={true}
-              ph="Project inruiry"
-              title="Subject"
-              register={register}
-              nameFor="subject"
-              type="text"
-            />
+              <Input
+                required={true}
+                ph="Project inruiry"
+                title="Subject"
+                register={register}
+                nameFor="subject"
+                type="text"
+              />
+            </div>
 
             <Input
               ph=""
@@ -151,7 +153,7 @@ export default function Contact() {
             </div>
 
             <div>
-              <h3 className="font-medium text-sm">
+              <h3 className="font-medium text-sm text-[#364153]">
                 Technologies Interested In
               </h3>
               <div className="grid grid-cols-2">

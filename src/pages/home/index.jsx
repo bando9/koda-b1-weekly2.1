@@ -16,9 +16,9 @@ export default function Home() {
       <main>
         <section
           id="header"
-          className="md:grid md:grid-cols-2 mt-20 gap-16 mb-20"
+          className="md:grid md:grid-cols-2 mt-20 gap-16 mb-20 lg:px-28"
         >
-          <div className="header-content mx-6">
+          <div className="header-content px-6">
             <div className="space-y-5">
               <h2 className="text-[#FF5F22] uppercase font-semibold text-sm">
                 available for hire
@@ -68,13 +68,17 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="mt-15 md:ml-auto flex justify-center ">
-            <img src="/images/profile.png" alt="profile image" />
+          <div className="mt-15 flex justify-center ">
+            <img
+              src="/images/profile.png"
+              alt="profile image"
+              className="object-contain"
+            />
           </div>
         </section>
 
         <section id="about" className="bg-[#F9FAFB] py-20">
-          <div className="mx-6 ">
+          <div className="mx-6 lg:px-28">
             <SectionHeading
               label="Who I am"
               title="A Little About Me"
@@ -82,23 +86,25 @@ export default function Home() {
             />
 
             <div className="mt-14 space-y-6">
-              <CardHome
-                description="I enjoy breaking down complex challenges into simple, elegant solutions
+              <div className="md:flex md:gap-6">
+                <CardHome
+                  description="I enjoy breaking down complex challenges into simple, elegant solutions
         that scale well over time."
-                title="Problem Solver"
-              />
+                  title="Problem Solver"
+                />
 
-              <CardHome
-                title="Team Player"
-                description="Experienced collaborating with designers, product managers,
+                <CardHome
+                  title="Team Player"
+                  description="Experienced collaborating with designers, product managers,
                   and engineers in agile environments."
-              />
+                />
 
-              <CardHome
-                title="Lifelong Learner"
-                description="Always exploring new tools and technologies. Currently
+                <CardHome
+                  title="Lifelong Learner"
+                  description="Always exploring new tools and technologies. Currently
                   deepening my cloud architecture and DevOps skills."
-              />
+                />
+              </div>
 
               <div className="flex justify-center items-center">
                 <Link to="/about" className="mt-10 text-sm font-semibold">
@@ -110,7 +116,7 @@ export default function Home() {
         </section>
 
         <section id="skills" className="py-20">
-          <div className="px-6 ">
+          <div className="px-6 lg:px-28">
             <SectionHeading
               label="Technical Skills"
               title="What I Work With"
@@ -118,38 +124,28 @@ export default function Home() {
                 web applications."
             />
 
-            <div className="space-y-3 mt-17">
-              <div className="flex gap-3 items-center justify-center">
-                <Badge name="React" />
-                <Badge name="TypeScript" />
-                <Badge name="JavaScript" />
-              </div>
-              <div className="flex gap-3 items-center justify-center">
-                <Badge name="Node.js" />
-                <Badge name="Python" />
-                <Badge name="PostgreSQL" />
-              </div>
-              <div className="flex gap-3 items-center justify-center">
-                <Badge name="MongoDB" />
-                <Badge name="Docker" />
-                <Badge name="AWS" />
-              </div>
-              <div className="flex gap-3 items-center justify-center">
-                <Badge name="Next.js" />
-                <Badge name="REST APIs" />
-                <Badge name="GraphQL" />
-              </div>
-              <div className="flex gap-3 items-center justify-center">
-                <Badge name="Tailwind CSS" />
-                <Badge name="Figma" />
-                <Badge name="Git" />
-              </div>
+            <div className="space-y-3 space-x-4 mt-17 flex flex-wrap items-center justify-center">
+              <Badge name="React" />
+              <Badge name="TypeScript" />
+              <Badge name="JavaScript" />
+              <Badge name="Node.js" />
+              <Badge name="Python" />
+              <Badge name="PostgreSQL" />
+              <Badge name="MongoDB" />
+              <Badge name="Docker" />
+              <Badge name="AWS" />
+              <Badge name="Next.js" />
+              <Badge name="REST APIs" />
+              <Badge name="GraphQL" />
+              <Badge name="Tailwind CSS" />
+              <Badge name="Figma" />
+              <Badge name="Git" />
             </div>
           </div>
         </section>
 
         <section id="projects" className="py-20 bg-[#F9FAFB]">
-          <div className="mx-6">
+          <div className="mx-6 lg:px-28">
             <SectionHeading
               label="My Work"
               title="Featured Projects"
@@ -157,7 +153,7 @@ export default function Home() {
                 development stack."
             />
 
-            <div className="mt-15 mx-6 space-y-8">
+            <div className="mt-15 px-6 space-y-8 md:space-y-0 md:flex md:space-x-7">
               <CardHomeWork
                 src="work1"
                 title="ShopEase"
@@ -193,7 +189,7 @@ export default function Home() {
               description="Feedback from people I've had the pleasure of working with."
             />
 
-            <div className="mt-15 space-y-7">
+            <div className="mt-15 space-y-7 lg:space-y-0 lg:flex lg:px-28 lg:gap-7">
               <CardHomeTestimonial
                 name="Sarah Johnson"
                 background="CEO, BrightShop Inc."
@@ -222,19 +218,21 @@ export default function Home() {
 
         <section className="py-20 text-center bg-[#111111]">
           <div className="mx-6">
-            <h2 className="font-bold text-3xl text-white">
-              Let's Work Together
-            </h2>
-            <p className="mt-4 text-[#FFD6A8]">
-              I'm currently available for freelance projects and full-time
-              opportunities. Let's build something great.
-            </p>
-            <button
-              href="/contact"
-              className="bg-[#FF5F22] rounded-lg py-4 px-8 mt-8 font-bold text-lg"
-            >
-              Get In Touch
-            </button>
+            <div className="px-6">
+              <h2 className="font-bold text-3xl text-white">
+                Let's Work Together
+              </h2>
+              <p className="mt-4 text-[#FFD6A8]">
+                I'm currently available for freelance projects and full-time
+                opportunities. Let's build something great.
+              </p>
+              <button
+                href="/contact"
+                className="bg-[#FF5F22] rounded-lg py-4 px-8 mt-8 font-bold text-lg"
+              >
+                Get In Touch
+              </button>
+            </div>
           </div>
         </section>
       </main>

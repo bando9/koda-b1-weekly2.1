@@ -24,8 +24,9 @@ export default function Project() {
             <p className="pill">Full Stack</p>
           </div>
 
-          <div className="mt-12 space-y-7">
+          <div className="mt-12 space-y-7 lg:grid lg:grid-cols-3 lg:gap-7 lg:px-28">
             <Card
+              techs={["React", "Node.js", "MongoDB", "Stripe"]}
               title="ShopEase"
               src="work1"
               description="A full-featured e-commerce platform with product catalog, shopping cart, order history, wishlists, and Stripe payment integration."

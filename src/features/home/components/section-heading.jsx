@@ -1,7 +1,7 @@
 export default function SectionHeading({ label, title, description }) {
   return (
     <div>
-      <div className="text-center pb-5">
+      <div className="text-center pb-5 md:flex md:justify-center md:flex-col md:items-center">
         <h2 className="section-label">{label}</h2>
         <h1 className="section-title">{title}</h1>
         <p className="section-description">{description}</p>

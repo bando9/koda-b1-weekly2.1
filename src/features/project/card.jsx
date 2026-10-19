@@ -1,12 +1,4 @@
-const defaultTech = ["React", "Node.js", "MongoDB", "Stripe"];
-
-export default function Card({
-  src,
-  title,
-  label,
-  description,
-  techs = defaultTech,
-}) {
+export default function Card({ src, title, label, description, techs }) {
   return (
     <div className="rounded-xl shadow">
       <img src={`/images/${src}.png`} alt="#" className="rounded-t-xl w-full" />
@@ -23,11 +15,13 @@ export default function Card({
             <p className="badge">{tech}</p>
           ))}
         </div>
-        <div className="flex justify-between">
-          <button className="button border border-[#E5E7EB] text-[#364153]">
+        <div className="grid grid-cols-2 gap-3">
+          <button className="button w-full border border-[#E5E7EB] text-[#364153]">
             GitHub
           </button>
-          <button className="button bg-[#111111] text-white">Live Demo</button>
+          <button className="button w-full bg-[#111111] text-white">
+            Live Demo
+          </button>
         </div>
       </div>
     </div>

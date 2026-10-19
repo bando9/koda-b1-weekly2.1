@@ -1,6 +1,6 @@
 export default function CardCertificate({ initial, title, label, date }) {
   return (
-    <div className="flex justify-center items-center shadow rounded-xl p-6 gap-4">
+    <div className="flex justify-center items-center md:justify-start shadow rounded-xl p-6 gap-4">
       <div className="bg-[#FFF3EE] rounded-xl h-12 w-12 flex items-center justify-center">
         <p className="uppercase text-xs font-bold text-[#FF5F22]">{initial}</p>
       </div>

@@ -33,11 +33,11 @@ export default function About() {
           description="A passionate developer who loves building things that make a real difference."
         />
 
-        <section className="py-20">
+        <section className="py-20 lg:flex lg:px-28 lg:justify-center lg:items-center lg:gap-8">
           <img
             src="/images/profile1.png"
             alt="Alex profile"
-            className="rounded-xl mx-auto"
+            className="rounded-xl mx-auto w-full h-full object-contain"
           />
 
           <div className="mt-15 mx-6">
@@ -63,7 +63,7 @@ export default function About() {
                 fiction. I'm actively looking for my next challenge.
               </p>
             </div>
-            <div className="mt-7 grid grid-cols-2 gap-3">
+            <div className="mt-7 flex flex-wrap gap-3">
               <div className="py-2 px-4 bg-[#F9FAFB] rounded-full text-sm font-normal">
                 <p>San Francisco, CA</p>
               </div>
@@ -84,7 +84,7 @@ export default function About() {
           <Timeline />
         </section>
 
-        <section className="py-20 px-6">
+        <section className="py-20 px-6 lg:px-70">
           <SectionHeading label="career" title="work experience" />
 
           <div className="space-y-6 mt-14">
@@ -109,14 +109,14 @@ export default function About() {
           </div>
         </section>
 
-        <section className="py-20 px-6 bg-[#F9FAFB]">
+        <section className="py-20 px-6 lg:px-70 bg-[#F9FAFB]">
           <SectionHeading label="skills" title="technical proficiency" />
           <div className="mt-14">
             <SkillsProgress />
           </div>
         </section>
 
-        <section className="py-20 px-6">
+        <section className="py-20 px-6 lg:px-70">
           <SectionHeading
             label="personal"
             title="interests & hobbies"
@@ -145,7 +145,7 @@ export function SkillsProgress() {
   ];
 
   return (
-    <div className="w-full max-w-xl mx-auto space-y-6 font-sans p-4">
+    <div className="space-y-6">
       {skills.map((skill, index) => (
         <div key={index} className="space-y-2">
           <div className="flex justify-between items-center text-sm font-semibold text-[#364153]">
@@ -180,7 +180,7 @@ export function InterestTags() {
   ];
 
   return (
-    <div className="flex flex-wrap justify-center gap-3 max-w-md ">
+    <div className="flex flex-wrap justify-center gap-3 md:max-w-2xl lg:max-w-full lg:p-15">
       {interests.map((interest, index) => (
         <div key={index} className="pill bg-[#F9FAFB] text-[#364153]">
           {interest}

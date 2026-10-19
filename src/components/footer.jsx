@@ -6,8 +6,8 @@ import { Link } from "react-router";
 export default function Footer() {
   return (
     <footer className="bg-[#101828]">
-      <div className="mx-6 flex flex-col items-center justify-center">
-        <div className="pt-14 pb-10 space-y-10">
+      <div className="mx-6 flex flex-col">
+        <div className="pt-14 pb-10 space-y-10 lg:grid lg:grid-cols-3 lg:gap-10 lg:px-28">
           <div className="left">
             <h2 className="text-white font-bold text-xl">Alex Carter</h2>
             <p className="mt-3 font-normal text-sm text-[#99A1AF]">
@@ -55,14 +55,11 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mx-6 flex flex-col justify-center border-t border-[#1E2939]">
-          <p className="text-[#6A7282] font-normal text-sm text-center mt-6">
+        <div className="mx-6 pb-14 flex flex-col md:flex-row md:justify-between md:items-center justify-center items-center border-t border-[#1E2939]">
+          <p className="text-[#6A7282] font-normal text-sm mt-6">
             @2026 Alex Carter. All rights reserved.
           </p>
-          <Link
-            to="/"
-            className="text-[#99A1AF] flex mt-3 justify-center gap-2 pb-14"
-          >
+          <Link to="/" className="text-[#99A1AF] flex mt-3 gap-2">
             Back to Top <IconArrowUp stroke={2} />
           </Link>
         </div>
