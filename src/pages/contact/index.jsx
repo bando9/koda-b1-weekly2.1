@@ -70,9 +70,12 @@ export default function Contact() {
           description="Have a project in mind or just want to say hello? Fill out the form and I'll get back to you within 24 hours."
         />
 
-        <section className="px-6 py-16">
-          <h2 className="font-bold text-[#101828] text-xl">Send a Message</h2>
-          <form className="mt-7 space-y-5" onSubmit={handleSubmit(onSubmit)}>
+        <section className="px-6 py-16 lg:px-28 lg:grid lg:grid-cols-12 lg:gap-8">
+          <form
+            className="mt-7 space-y-6 lg:col-span-8"
+            onSubmit={handleSubmit(onSubmit)}
+          >
+            <h2 className="font-bold text-[#101828] text-xl">Send a Message</h2>
             <div className="md:grid md:grid-cols-2 md:space-x-4">
               <Input
                 required={true}
@@ -200,7 +203,7 @@ export default function Contact() {
               </div>
             </div>
 
-            <div className="flex flex-col gap-4 items-start">
+            <div className="flex flex-col gap-4 items-start lg:flex-row">
               <button
                 type="submit"
                 className="py-3 px-8 bg-[#111111] text-white rounded-lg"
@@ -217,7 +220,7 @@ export default function Contact() {
             </div>
           </form>
 
-          <div className="mt-12 space-y-6">
+          <div className="mt-12 space-y-6 lg:col-span-4">
             <div className="bg-[#F9FAFB] rounded-xl p-6">
               <div className="space-y-5">
                 <h2 className="font-semibold text-base">Office Information</h2>

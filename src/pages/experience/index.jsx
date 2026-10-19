@@ -19,7 +19,7 @@ export default function Experience() {
           button={true}
         />
 
-        <section className="px-6 py-16">
+        <section className="px-6 py-16 lg:px-28">
           <SectionHeading
             align="start"
             label="work history"
@@ -31,13 +31,13 @@ export default function Experience() {
           </div>
         </section>
 
-        <section className="px-6 py-16">
+        <section className="px-6 py-16 lg:px-28">
           <SectionHeading
             label="credentials"
             title="certifications"
             align="start"
           />
-          <div className="mt-10 space-y-6">
+          <div className="mt-10 space-y-6 lg:space-y-0 lg:grid lg:grid-cols-3 lg:space-x-6">
             <CardCertificate
               initial="aws"
               title="AWS Certified Developer – Associate"
@@ -61,13 +61,13 @@ export default function Experience() {
           </div>
         </section>
 
-        <section className="px-6 py-12">
+        <section className="px-6 py-12 lg:px-28">
           <SectionHeading
             align="start"
             label="recognition"
             title="awards & honors"
           />
-          <div className="mt-10 space-y-6">
+          <div className="mt-10 space-y-6 lg:space-x-6 lg:grid-cols-2 lg:grid">
             {awards.map((award) => (
               <CardAward
                 title={award.title}
