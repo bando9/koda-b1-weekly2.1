@@ -6,7 +6,7 @@
   }
 
   .section-title {
-    @apply mt-3 font-bold text-3xl text-[#101828];
+    @apply mt-3 font-bold capitalize text-3xl text-[#101828];
   }
 
   .section-description {
