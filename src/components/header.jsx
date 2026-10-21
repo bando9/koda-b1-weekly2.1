@@ -1,5 +1,24 @@
 import { IconDownload } from "@tabler/icons-react";
 
+/**
+ *
+ * @typedef {Object} HeaderProps
+ * @property {string} label - teks tampil pada atas judul
+ * @property {string} title - teks judul utama di atas halaman
+ * @property {string} description - teks deskripsi topik halaman
+ * @property {boolean} button - memunculkan button
+ * @property {string} align - memberikan style font-align class tailwind
+ *
+ * @example
+ * <Header label="career history" title="experience" description="my professional journey, credentials, and recognition." button={true} align="left" />
+ */
+
+/**
+ * Komponen header utama bagian atas halaman
+ * @param {HeaderProps} props - properti komponen Header
+ * @returns {JSX.Element}
+ */
+
 export default function Header({
   label,
   title,

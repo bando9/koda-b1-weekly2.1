@@ -3,6 +3,13 @@ import { IconMenu2, IconX } from "@tabler/icons-react";
 import { Link, NavLink } from "react-router";
 import { links } from "../data";
 
+/**
+ * Komponen untuk menampilkan navigasi secara responsive dari mobile hingga desktop.
+ * berisi nama logo (ngelink ke Homepage) & link navigasi
+ *
+ * @returns {JSX.Element} Elemen di setiap atas halaman
+ */
+
 export default function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -14,8 +21,10 @@ export default function NavBar() {
     return `block px-4 py-3 text-sm font-semibold rounded-xl transition-colors ${isActive ? "bg-[#F3F4F6] text-[#111111]" : "text-[#4A5565]"}`;
   };
 
+  const closeMenu = () => setIsOpen(!isOpen);
+
   return (
-    <header className="relative py-3.5 px-6 max-w-full lg:px-28">
+    <header className="sticky top-0 z-50 bg-white py-3.5 px-6 max-w-full lg:px-28">
       <div className="flex justify-between items-center">
         <Link to="/">
           <h2 className="font-bold text-lg">Alex Carter</h2>
@@ -47,7 +56,12 @@ export default function NavBar() {
           <ul className="space-y-1">
             {links.map((link) => (
               <li key={link.to}>
-                <NavLink to={link.to} className={getActiveLinkMobile} end>
+                <NavLink
+                  onClick={closeMenu}
+                  to={link.to}
+                  className={getActiveLinkMobile}
+                  end
+                >
                   {link.label}
                 </NavLink>
               </li>

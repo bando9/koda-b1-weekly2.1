@@ -3,6 +3,12 @@ import BadgeFooter from "../features/home/components/badge-footer";
 import { IconArrowUp } from "@tabler/icons-react";
 import { Link } from "react-router";
 
+/**
+ * Komponen digunakan untuk menampilkan footer pada setiap halaman
+ * menampilkan profil singkat, kumpulan link cepat, kontak pribadi, dan hak cipta.
+ * @returns {JSX.Element} Elemen struktur footer halaman.
+ */
+
 export default function Footer() {
   const scrollToTop = () => {
     window.scrollTo({
@@ -10,6 +16,7 @@ export default function Footer() {
       behavior: "smooth",
     });
   };
+
   return (
     <footer className="bg-[#101828]">
       <div className="px-6 flex flex-col lg:px-28">

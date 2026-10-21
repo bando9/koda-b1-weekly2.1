@@ -1,3 +1,19 @@
+/**
+ *
+ * @param {Object} SectionHeadinProps
+ * @property {string} label - teks label berukuran kecil diatas judul
+ * @property {string} title - teks judul utama bagian (section)
+ * @property {string} description - teks deskripsi opsional yg muncul dibawah judul utama
+ */
+
+/**
+ * Komponent header untuk membagi tiap section pada halaman.
+ * menampilkan label, judul, deskripsi opsional, dan garis bawah dekoratif
+ *
+ * @param {SectionHeadingProps} props - properti untuk komponen SectionHeading
+ * @returns {JSX.Element} Elemen antarmuka header section
+ */
+
 export default function SectionHeading({
   label,
   title,

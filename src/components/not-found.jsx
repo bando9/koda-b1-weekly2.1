@@ -1,5 +1,12 @@
 import { Link } from "react-router";
 
+/**
+ * Komponen untuk menampilkan halaman not found (404) ketika URL yang diakses tidak terdaftar pada Router.
+ * Komponen digunakan sebagai rute penangkap di konfigurasi React Router.
+ *
+ * @returns {JSX.Element} NotFound
+ */
+
 function NotFound() {
   return (
     <div className="min-h-screen bg-white flex flex-col items-center justify-center px-6 text-center font-sans">
