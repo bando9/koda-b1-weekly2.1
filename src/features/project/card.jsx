@@ -11,8 +11,10 @@ export default function Card({ src, title, label, description, techs }) {
         </div>
         <p className="text-[#6A7282] text-sm mb-4">{description}</p>
         <div className="flex mb-5">
-          {techs.map((tech) => (
-            <p className="badge">{tech}</p>
+          {techs.map((tech, index) => (
+            <p className="badge" key={index}>
+              {tech}
+            </p>
           ))}
         </div>
         <div className="grid grid-cols-2 gap-3">

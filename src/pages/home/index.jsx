@@ -7,6 +7,12 @@ import Footer from "../../components/footer";
 import NavBar from "../../components/nav-bar";
 
 import { Link } from "react-router";
+import {
+  abouts,
+  projects,
+  skills,
+  testimonials,
+} from "../../features/home/data";
 
 export default function Home() {
   return (
@@ -86,24 +92,14 @@ export default function Home() {
             />
 
             <div className="mt-14 space-y-6">
-              <div className="md:flex md:gap-6">
-                <CardHome
-                  description="I enjoy breaking down complex challenges into simple, elegant solutions
-        that scale well over time."
-                  title="Problem Solver"
-                />
-
-                <CardHome
-                  title="Team Player"
-                  description="Experienced collaborating with designers, product managers,
-                  and engineers in agile environments."
-                />
-
-                <CardHome
-                  title="Lifelong Learner"
-                  description="Always exploring new tools and technologies. Currently
-                  deepening my cloud architecture and DevOps skills."
-                />
+              <div className="flex flex-col lg:flex-row gap-6">
+                {abouts.map((about) => (
+                  <CardHome
+                    key={about.id}
+                    title={about.title}
+                    description={about.description}
+                  />
+                ))}
               </div>
 
               <div className="flex justify-center items-center">
@@ -125,21 +121,9 @@ export default function Home() {
             />
 
             <div className="space-y-3 space-x-4 mt-17 flex flex-wrap items-center justify-center">
-              <Badge name="React" />
-              <Badge name="TypeScript" />
-              <Badge name="JavaScript" />
-              <Badge name="Node.js" />
-              <Badge name="Python" />
-              <Badge name="PostgreSQL" />
-              <Badge name="MongoDB" />
-              <Badge name="Docker" />
-              <Badge name="AWS" />
-              <Badge name="Next.js" />
-              <Badge name="REST APIs" />
-              <Badge name="GraphQL" />
-              <Badge name="Tailwind CSS" />
-              <Badge name="Figma" />
-              <Badge name="Git" />
+              {skills.map((skill, i) => (
+                <Badge name={skill} key={i} />
+              ))}
             </div>
           </div>
         </section>
@@ -153,25 +137,16 @@ export default function Home() {
                 development stack."
             />
 
-            <div className="mt-15 px-6 space-y-8 md:space-y-0 md:flex md:space-x-7">
-              <CardHomeWork
-                src="work1"
-                title="ShopEase"
-                description=" A full-featured e-commerce platform with product catalog, cart management, and Stripe payment integration."
-                technologies={["React", "Node.js", "MongoDB", "Stripe"]}
-              />
-              <CardHomeWork
-                src="work2"
-                title="TaskFlow"
-                description="A drag-and-drop task manager with real-time collaboration, team workspaces, and deadline tracking."
-                technologies={["React", "TypeScript", "Firebase"]}
-              />
-              <CardHomeWork
-                src="work3"
-                title="ChatSpace"
-                description="Real-time messaging platform with channels, direct messages, file sharing, and emoji reactions."
-                technologies={["React", "Socket.io", "Express", "MongoDB"]}
-              />
+            <div className="mt-15 px-6 space-y-8 lg:space-y-0 lg:flex lg:space-x-7">
+              {projects.map((project) => (
+                <CardHomeWork
+                  key={project.id}
+                  src={project.src}
+                  title={project.title}
+                  description={project.description}
+                  technologies={project.technologies}
+                />
+              ))}
             </div>
             <div className="mt-10 justify-center flex">
               <button className="px-6 py-3 bg-[#111111] text-white rounded-xl ">
@@ -190,28 +165,15 @@ export default function Home() {
             />
 
             <div className="mt-15 space-y-7 lg:space-y-0 lg:flex lg:px-28 lg:gap-7">
-              <CardHomeTestimonial
-                name="Sarah Johnson"
-                background="CEO, BrightShop Inc."
-                src="testimonial1"
-                description="“Alex delivered our e-commerce platform ahead of schedule. The code quality was outstanding and the UI exceeded our expectations.”"
-              />
-
-              <CardHomeTestimonial
-                name="Michael Chen"
-                description="“Working with Alex was a pleasure. They understood our
-                    requirements immediately and brought creative solutions to
-                    complex problems.”"
-                src="testimonial2"
-                background="CTO, Velocity Labs"
-              />
-
-              <CardHomeTestimonial
-                name="Emily Rodriguez"
-                background="Marketing Director, Apex Digital"
-                src="testimonial3"
-                description="“Alex transformed our outdated website into a modern, responsive platform. Traffic increased 40% within the first month of launch.”"
-              />
+              {testimonials.map((testimonial) => (
+                <CardHomeTestimonial
+                  key={testimonial.id}
+                  name={testimonial.name}
+                  background={testimonial.background}
+                  src={testimonial.src}
+                  description={testimonial.description}
+                />
+              ))}
             </div>
           </div>
         </section>

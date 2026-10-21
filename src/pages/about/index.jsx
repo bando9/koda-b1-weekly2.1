@@ -33,14 +33,16 @@ export default function About() {
           description="A passionate developer who loves building things that make a real difference."
         />
 
-        <section className="py-20 lg:flex lg:px-28 lg:justify-center lg:items-center lg:gap-8">
-          <img
-            src="/images/profile1.png"
-            alt="Alex profile"
-            className="rounded-xl mx-auto w-full h-full object-contain"
-          />
+        <section className="py-20 lg:grid lg:grid-cols-2 lg:px-28 lg:justify-center lg:items-center lg:gap-8">
+          <div className="flex justify-center items-center ">
+            <img
+              src="/images/profile1.png"
+              alt="Alex profile"
+              className="rounded-xl w-72 h-72 object-contain"
+            />
+          </div>
 
-          <div className="mt-15 mx-6">
+          <div className="mt-15 mx-6 lg:mt-0 lg:mx-0">
             <h2 className="text-2xl font-bold">
               Building the web, one line at a time.
             </h2>

@@ -22,12 +22,7 @@ const initialForm = {
 };
 
 export default function Contact() {
-  const {
-    register,
-    handleSubmit,
-    reset,
-    // formState: { errors },
-  } = useForm({
+  const { register, handleSubmit, reset } = useForm({
     defaultValues: initialForm,
   });
 

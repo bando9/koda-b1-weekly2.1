@@ -5,12 +5,12 @@ export default function CardHomeWork({
   technologies,
 }) {
   return (
-    <div className="rounded-xl bg-white shadow flex flex-col h-full">
+    <div className="rounded-xl bg-white shadow">
       <div className="w-full">
         <img
           src={`/images/${src}.png`}
           alt={`${title} image`}
-          className="w-full h-full object-cover rounded-t-xl"
+          className="w-full lg:h-65 object-cover rounded-t-xl"
         />
       </div>
       <div className="px-6 py-6">

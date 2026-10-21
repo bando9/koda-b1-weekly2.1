@@ -70,6 +70,7 @@ export default function Experience() {
           <div className="mt-10 space-y-6 lg:space-x-6 lg:grid-cols-2 lg:grid">
             {awards.map((award) => (
               <CardAward
+                key={award.id}
                 title={award.title}
                 date={award.date}
                 corp={award.corp}
