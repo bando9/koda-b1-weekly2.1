@@ -6,7 +6,9 @@ export default function InformationTag({ icon, label, tag }) {
       </div>
       <div>
         <p className="font-medium text-sm">{tag}</p>
-        <p className="text-sm text-[#6A7282]">{label}</p>
+        <p className="text-sm text-[#6A7282] hover:text-[#FF5F22] transition-all duration-150">
+          {label}
+        </p>
       </div>
     </div>
   );

@@ -9,17 +9,12 @@ import SocialMedia from "../../features/contact/social-media";
 import InformationTag from "../../features/contact/information-tag";
 import { useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
-
-const initialForm = {
-  name: "",
-  email: "",
-  phone: "",
-  subject: "",
-  country: "",
-  message: "",
-  method: "email-rb",
-  tech: "",
-};
+import {
+  checkboxs,
+  informations,
+  initialForm,
+  inputs,
+} from "../../features/contact/data";
 
 export default function Contact() {
   const { register, handleSubmit, reset } = useForm({
@@ -71,45 +66,21 @@ export default function Contact() {
             onSubmit={handleSubmit(onSubmit)}
           >
             <h2 className="font-bold text-[#101828] text-xl">Send a Message</h2>
-            <div className="md:grid md:grid-cols-2 md:space-x-4">
-              <Input
-                required={true}
-                ph="Jordan Smith"
-                title="Full Name"
-                register={register}
-                nameFor="name"
-                type="text"
-              />
-
-              <Input
-                required={true}
-                ph="you@example.com"
-                title="Email Address"
-                register={register}
-                nameFor="email"
-                type="email"
-              />
-
-              <Input
-                ph="+1 (415) 555-0100"
-                title="Phone Number"
-                register={register}
-                nameFor="phone"
-                type="tel"
-              />
-
-              <Input
-                required={true}
-                ph="Project inruiry"
-                title="Subject"
-                register={register}
-                nameFor="subject"
-                type="text"
-              />
+            <div className="md:grid md:grid-cols-2 md:space-x-4 space-y-6">
+              {inputs.map((input) => (
+                <Input
+                  key={input.id}
+                  required={input.required}
+                  ph={input.ph}
+                  title={input.title}
+                  nameFor={input.nameFor}
+                  type={input.type}
+                  register={register}
+                />
+              ))}
             </div>
 
             <Input
-              ph=""
               title="Country"
               register={register}
               nameFor="country"
@@ -155,46 +126,14 @@ export default function Contact() {
                 Technologies Interested In
               </h3>
               <div className="grid grid-cols-2">
-                <InputCheckbox
-                  nameFor="react"
-                  label="React"
-                  register={register}
-                />
-                <InputCheckbox
-                  nameFor="node.js"
-                  label="Node.js"
-                  register={register}
-                />
-                <InputCheckbox
-                  nameFor="python"
-                  label="Python"
-                  register={register}
-                />
-                <InputCheckbox
-                  nameFor="typescript"
-                  label="TypeScript"
-                  register={register}
-                />
-                <InputCheckbox
-                  nameFor="react native"
-                  label="React Native"
-                  register={register}
-                />
-                <InputCheckbox
-                  nameFor="vue.js"
-                  label="Vue.js"
-                  register={register}
-                />
-                <InputCheckbox
-                  nameFor="django"
-                  label="Django"
-                  register={register}
-                />
-                <InputCheckbox
-                  nameFor="express.js"
-                  label="Express.js"
-                  register={register}
-                />
+                {checkboxs.map((checkbox) => (
+                  <InputCheckbox
+                    key={checkbox.id}
+                    nameFor={checkbox.id}
+                    label={checkbox.label}
+                    register={register}
+                  />
+                ))}
               </div>
             </div>
 
@@ -220,29 +159,14 @@ export default function Contact() {
               <div className="space-y-5">
                 <h2 className="font-semibold text-base">Office Information</h2>
                 <div className="space-y-4">
-                  <InformationTag
-                    icon="location"
-                    label="San Francisco, CA 94105"
-                    tag="Location"
-                  />
-
-                  <InformationTag
-                    icon="email"
-                    label="alex.carter@email.com"
-                    tag="Email"
-                  />
-
-                  <InformationTag
-                    icon="phone"
-                    label="+1 (415) 555-0192"
-                    tag="Phone"
-                  />
-
-                  <InformationTag
-                    icon="time"
-                    label="Mon – Fri, 9 AM – 6 PM PST"
-                    tag="Hours"
-                  />
+                  {informations.map((info) => (
+                    <InformationTag
+                      key={info.id}
+                      icon={info.icon}
+                      label={info.label}
+                      tag={info.tag}
+                    />
+                  ))}
                 </div>
               </div>
             </div>
