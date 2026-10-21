@@ -1,16 +1,55 @@
-# React + Vite
+# Alex Carter Personal Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Introduction
 
-Currently, two official plugins are available:
+Welcome to my alex carter website project! This website serves as a platform to showcase information about him, his open-source projects, writings, and contact information.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Pages / Sitemap
 
-## React Compiler
+I just create 5 page for visitor to learn about Alex Carter.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- [Home](#home): Overview of who is Alex Carter and what he do.
+- [About](#about): About: Shares Alex Carter background, education, and journey into web development.
+- [Projects](#projects): Showcases his personal projects with descriptions, tech stacks, and demo links.
+- [Experience](#experience): Detailing his proffesional experience, certifications and awards / honors that he have.
+- [Contact](#find-me): Provides a form and links to connect with me on social media.
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- React.js
+- Tailwind CSS
+
+### Library
+
+- React router
+- tabler icons
+- react-hook form
+- uuid
+
+## Links
+
+- Website URL: [weekly21.netlify.app/](https://weekly21.netlify.app/)
+- Github Repo: [github.com/bando9](https://github.com/bando9/bandomega.com)
+- Figma File: [https://www.figma.com/design/pM87HcepfHfiVGoBlxIUaU/Personal-Profile?node-id=0-1&p=f&t=IsuW44XlZGTLTAEU-0](https://www.figma.com/design/pM87HcepfHfiVGoBlxIUaU/Personal-Profile?node-id=0-1&p=f&t=IsuW44XlZGTLTAEU-0)
+
+## Preview
+
+### Home
+
+![Home](./public/preview/home-desktop.png)
+
+### About
+
+![About](./public/preview/about-desktop.png)
+
+### Projects
+
+![Projects](./public/preview/projects-desktop.png)
+
+### Experience
+
+![Experience](./public/preview/experience-desktop.png)
+
+### Contact
+
+![Contact](./public/preview/contact-desktop.png)
