@@ -45,14 +45,18 @@ export default function Home() {
             </p>
 
             <div className="space-x-4 mt-8 flex">
-              <Link to="/experience">
-                <button className="bg-[#111111] py-3.5 px-7 rounded-lg text-center text-white text-base font-semibold">
-                  View My Work
-                </button>
+              <Link
+                to="/project"
+                className="bg-[#111111] py-3.5 px-7 rounded-lg text-center text-white text-base font-semibold cursor-pointer"
+              >
+                View My Work
               </Link>
-              <button className="border-2 border-[#111111] py-3.5 px-7 rounded-lg font-semibold text-base">
-                <Link to="/contact">Contact Me</Link>
-              </button>
+              <Link
+                to="/contact"
+                className="border-2 border-[#111111] py-3.5 px-7 rounded-lg font-semibold text-base"
+              >
+                Contact Me
+              </Link>
             </div>
 
             <div className="flex space-x-10 mt-10">

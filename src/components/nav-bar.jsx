@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { IconMenu2, IconX } from "@tabler/icons-react";
-import { NavLink } from "react-router";
+import { Link, NavLink } from "react-router";
 import { links } from "../data";
 
 export default function NavBar() {
@@ -17,7 +17,9 @@ export default function NavBar() {
   return (
     <header className="relative py-3.5 px-6 max-w-full lg:px-28">
       <div className="flex justify-between items-center">
-        <h2 className="font-bold text-lg">Alex Carter</h2>
+        <Link to="/">
+          <h2 className="font-bold text-lg">Alex Carter</h2>
+        </Link>
         <button
           onClick={() => setIsOpen(!isOpen)}
           className="cursor-pointer lg:hidden"

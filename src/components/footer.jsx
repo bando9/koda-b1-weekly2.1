@@ -4,6 +4,12 @@ import { IconArrowUp } from "@tabler/icons-react";
 import { Link } from "react-router";
 
 export default function Footer() {
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
   return (
     <footer className="bg-[#101828]">
       <div className="px-6 flex flex-col lg:px-28">
@@ -59,9 +65,13 @@ export default function Footer() {
           <p className="text-[#6A7282] font-normal text-sm mt-6">
             @2026 Alex Carter. All rights reserved.
           </p>
-          <Link to="/" className="text-[#99A1AF] flex mt-3 gap-2">
+          <button
+            onClick={scrollToTop}
+            to="/"
+            className="text-[#99A1AF] flex mt-3 gap-2 cursor-pointer"
+          >
             Back to Top <IconArrowUp stroke={2} />
-          </Link>
+          </button>
         </div>
       </div>
     </footer>
