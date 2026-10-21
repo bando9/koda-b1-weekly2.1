@@ -45,7 +45,7 @@ export default function Home() {
             </p>
 
             <div className="space-x-4 mt-8 flex">
-              <Link to="/work">
+              <Link to="/experience">
                 <button className="bg-[#111111] py-3.5 px-7 rounded-lg text-center text-white text-base font-semibold">
                   View My Work
                 </button>
@@ -149,9 +149,12 @@ export default function Home() {
               ))}
             </div>
             <div className="mt-10 justify-center flex">
-              <button className="px-6 py-3 bg-[#111111] text-white rounded-xl ">
+              <Link
+                to="/project"
+                className="px-6 py-3 bg-[#111111] text-white rounded-xl "
+              >
                 View All Projects
-              </button>
+              </Link>
             </div>
           </div>
         </section>
@@ -181,19 +184,21 @@ export default function Home() {
         <section className="py-20 text-center bg-[#111111]">
           <div className="mx-6">
             <div className="px-6">
-              <h2 className="font-bold text-3xl text-white">
-                Let's Work Together
-              </h2>
-              <p className="mt-4 text-[#FFD6A8]">
-                I'm currently available for freelance projects and full-time
-                opportunities. Let's build something great.
-              </p>
-              <button
-                href="/contact"
-                className="bg-[#FF5F22] rounded-lg py-4 px-8 mt-8 font-bold text-lg"
+              <div>
+                <h2 className="font-bold text-3xl text-white">
+                  Let's Work Together
+                </h2>
+                <p className="mt-4 text-[#FFD6A8]">
+                  I'm currently available for freelance projects and full-time
+                  opportunities. Let's build something great.
+                </p>
+              </div>
+              <Link
+                to="/contact"
+                className="bg-[#FF5F22] rounded-lg py-4 px-8 mt-8 inline-block font-bold text-lg"
               >
                 Get In Touch
-              </button>
+              </Link>
             </div>
           </div>
         </section>
