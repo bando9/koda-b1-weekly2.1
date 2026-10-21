@@ -2,7 +2,7 @@ export default function CardHomeWork({
   title,
   description,
   src,
-  technologies,
+  technologies = [],
 }) {
   return (
     <div className="rounded-xl bg-white shadow">
