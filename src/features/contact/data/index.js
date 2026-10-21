@@ -26,28 +26,28 @@ export const inputs = [
     title: "Full Name",
     ph: "Jordan Smith",
     type: "text",
-    required: true,
+    isRequired: true,
   },
   {
     nameFor: "email",
     title: "Email Address",
     ph: "you@example.com",
     type: "email",
-    required: true,
+    isRequired: true,
   },
   {
     nameFor: "phone",
     title: "Phone Number",
     ph: "+1 (415) 555-0100",
     type: "tel",
-    required: false,
+    isRequired: false,
   },
   {
     nameFor: "subject",
     title: "Subject",
     ph: "Project inquiry",
     type: "text",
-    required: true,
+    isRequired: true,
   },
 ];
 

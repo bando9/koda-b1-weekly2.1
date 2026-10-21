@@ -37,34 +37,6 @@ export const skills = [
   "Git",
 ];
 
-export const projects = [
-  {
-    id: 1,
-    src: "work1",
-    title: "ShopEase",
-    description:
-      "A full-featured e-commerce platform with product catalog, cart management, and Stripe payment integration.",
-    technologies: ["React", "Node.js", "MongoDB", "Stripe"],
-  },
-  {
-    id: 2,
-    src: "work2",
-    title: "TaskFlow",
-    description:
-      "A drag-and-drop task manager with real-time collaboration, team workspaces, and deadline tracking.",
-    technologies: ["React", "TypeScript", "Firebase"],
-  },
-
-  {
-    id: 3,
-    src: "work3",
-    title: "ChatSpace",
-    description:
-      "Real-time messaging platform with channels, direct messages, file sharing, and emoji reactions.",
-    technologies: ["React", "Socket.io", "Express", "MongoDB"],
-  },
-];
-
 export const testimonials = [
   {
     id: 1,

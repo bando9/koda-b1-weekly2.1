@@ -1,18 +1,17 @@
 import { useState } from "react";
 import Header from "../../components/header";
 import Card from "../../features/project/card";
-import { projects } from "../../features/project/data";
+import { categories, projects } from "../../features/project/data";
 
 export default function Project() {
   const [filter, setFilter] = useState("all");
 
-  const activeFilter = "bg-[#111111] text-white";
-
-  const filteredProjects = projects.filter((project) => {
-    return project.label.toLocaleLowerCase() == filter.toLowerCase();
-  });
-
-  console.log(filteredProjects);
+  const filteredProjects =
+    filter === "all"
+      ? projects
+      : projects.filter((project) => {
+          return project.label.toLocaleLowerCase() == filter.toLowerCase();
+        });
 
   return (
     <>
@@ -24,58 +23,23 @@ export default function Project() {
 
       <section className="py-16 px-6">
         <div className="flex justify-center items-center gap-3">
-          <button
-            onClick={() => setFilter("all")}
-            className={`rounded-full py-2.5 px-5 font-medium text-sm ${activeFilter}`}
-          >
-            All
-          </button>
-          <button
-            onClick={() => setFilter("frontend")}
-            className="rounded-full bg-[#111111] py-2.5 px-5 font-medium  text-white text-sm"
-          >
-            Frontend
-          </button>
-          <button
-            onClick={() => setFilter("backend")}
-            className="rounded-full bg-[#111111] py-2.5 px-5 font-medium  text-white text-sm"
-          >
-            Backend
-          </button>
+          {categories.map((category) => {
+            const isActive = filter === category.id;
 
-          <button
-            onClick={() => setFilter("full stack")}
-            className="rounded-full bg-[#111111] py-2.5 px-5 font-medium  text-white text-sm"
-          >
-            Full Stack
-          </button>
+            return (
+              <button
+                key={category.id}
+                onClick={() => setFilter(category.id)}
+                className={`rounded-full py-2.5 px-5 font-medium text-sm cursor-pointer ${isActive ? "bg-[#111111] text-white" : "border border-[#E5E7EB]"}`}
+              >
+                {category.label}
+              </button>
+            );
+          })}
         </div>
 
         <div className="mt-12 space-y-7 lg:grid lg:grid-cols-3 lg:gap-7 lg:px-28">
-          {filter !== "all"
-            ? filteredProjects.map((project) => (
-                <Card
-                  key={project.id}
-                  techs={project.techs}
-                  title={project.title}
-                  src={project.src}
-                  description={project.description}
-                  label={project.label}
-                />
-              ))
-            : projects.map((project) => (
-                <Card
-                  key={project.id}
-                  techs={project.techs}
-                  title={project.title}
-                  src={project.src}
-                  description={project.description}
-                  label={project.label}
-                />
-              ))}
-        </div>
-        {/* <div className="mt-12 space-y-7 lg:grid lg:grid-cols-3 lg:gap-7 lg:px-28">
-          {projects.map((project) => (
+          {filteredProjects.map((project) => (
             <Card
               key={project.id}
               techs={project.techs}
@@ -85,7 +49,7 @@ export default function Project() {
               label={project.label}
             />
           ))}
-        </div> */}
+        </div>
       </section>
     </>
   );

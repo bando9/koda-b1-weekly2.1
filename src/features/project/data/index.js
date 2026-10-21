@@ -19,15 +19,6 @@ export const projects = [
   },
   {
     id: 3,
-    title: "WeatherNow",
-    src: "work3",
-    description:
-      "A weather dashboard with 7-day forecasts, hourly charts, interactive maps, and location-based weather alerts powered by OpenWeather.",
-    label: "Frontend",
-    techs: ["React", "OpenWeather API", "CSS3"],
-  },
-  {
-    id: 4,
     title: "ChatSpace",
     src: "work3",
     description:
@@ -35,6 +26,16 @@ export const projects = [
     label: "Full Stack",
     techs: ["React", "Socket.io", "Express", "MongoDB"],
   },
+  {
+    id: 4,
+    title: "WeatherNow",
+    src: "work3",
+    description:
+      "A weather dashboard with 7-day forecasts, hourly charts, interactive maps, and location-based weather alerts powered by OpenWeather.",
+    label: "Frontend",
+    techs: ["React", "OpenWeather API", "CSS3"],
+  },
+
   {
     id: 5,
     title: "PortfolioGen",
@@ -53,4 +54,11 @@ export const projects = [
     label: "Backend",
     techs: ["Next.js", "PostgreSQL", "Prisma", "TypeScript"],
   },
+];
+
+export const categories = [
+  { id: "all", label: "All" },
+  { id: "frontend", label: "Frontend" },
+  { id: "Backend", label: "Backend" },
+  { id: "full stack", label: "Full Stack" },
 ];

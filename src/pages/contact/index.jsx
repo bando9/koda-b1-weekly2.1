@@ -13,11 +13,21 @@ import {
   initialForm,
   inputs,
 } from "../../features/contact/data";
+import { messagesSchema } from "../../features/contact/schema";
+import { yupResolver } from "@hookform/resolvers/yup";
 
 export default function Contact() {
-  const { register, handleSubmit, reset } = useForm({
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(messagesSchema),
     defaultValues: initialForm,
   });
+
+  // console.log(errors);
 
   const [messages, setMessages] = useState(() => {
     try {
@@ -36,7 +46,7 @@ export default function Contact() {
       ...data,
     };
 
-    setMessages((prevMessages) => [createMessage, ...prevMessages]);
+    setMessages((prevMessages) => [...prevMessages, createMessage]);
 
     reset();
   }
@@ -65,12 +75,13 @@ export default function Contact() {
             {inputs.map((input, i) => (
               <Input
                 key={i}
-                required={input.required}
+                isRequired={input.isRequired}
                 ph={input.ph}
                 title={input.title}
                 nameFor={input.nameFor}
                 type={input.type}
                 register={register}
+                errors={errors}
               />
             ))}
           </div>
@@ -80,6 +91,7 @@ export default function Contact() {
             register={register}
             nameFor="country"
             type="text"
+            errors={errors}
           />
 
           <div className="flex flex-col space-y-1.5">
@@ -92,6 +104,13 @@ export default function Contact() {
               placeholder="Tell me about your project or what you need help with..."
               {...register("message")}
             />
+            {errors.message?.message ? (
+              <span className="text-xs lg:text-sm text-red-500">
+                {errors.message?.message}
+              </span>
+            ) : (
+              <span></span>
+            )}
           </div>
 
           <div>
@@ -140,7 +159,7 @@ export default function Contact() {
               Send Message
             </button>
             <button
-              type="click"
+              type="button"
               onClick={handleReset}
               className="px-8 py-3 border-[#E5E7EB] border-2 rounded-lg"
             >

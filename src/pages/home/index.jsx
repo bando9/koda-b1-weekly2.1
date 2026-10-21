@@ -5,14 +5,12 @@ import SectionHeading from "../../features/home/components/section-heading";
 import CardHomeTestimonial from "../../features/home/components/card-home-testimonial";
 
 import { Link } from "react-router";
-import {
-  abouts,
-  projects,
-  skills,
-  testimonials,
-} from "../../features/home/data";
+import { abouts, skills, testimonials } from "../../features/home/data";
+import { projects } from "../../features/project/data";
 
 export default function Home() {
+  const showProjects = projects.slice(0, 3);
+
   return (
     <>
       <section
@@ -113,8 +111,7 @@ export default function Home() {
           <SectionHeading
             label="Technical Skills"
             title="What I Work With"
-            description="A snapshot of the tools and technologies I use to build modern
-                web applications."
+            description="A snapshot of the tools and technologies I use to build modern web applications."
           />
 
           <div className="space-y-3 space-x-4 mt-17 flex flex-wrap items-center justify-center">
@@ -135,7 +132,7 @@ export default function Home() {
           />
 
           <div className="mt-15 px-6 space-y-8 lg:space-y-0 lg:flex lg:space-x-7">
-            {projects.map((project) => (
+            {showProjects.map((project) => (
               <CardHomeWork
                 key={project.id}
                 src={project.src}
