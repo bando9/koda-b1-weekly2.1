@@ -11,7 +11,7 @@ export const messagesSchema = yup.object({
     .trim()
     .email("Format email tidak valid")
     .required("Email Address wajib diisi"),
-  phone: yup.string().trim().optional(),
+  phone: yup.number("Format harus angka").optional(),
   subject: yup.string().trim().required("Subject wajib diisi"),
   country: yup.string().trim().optional(),
   message: yup
